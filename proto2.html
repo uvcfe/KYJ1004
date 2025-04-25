@@ -4,167 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NC PLAY</title>
+      
 
-    <style>
-        * {
-          margin: 0;
-          padding: 0;
-          box-sizing: border-box;
-        }
-      
-        html, body {
-          height: 100%;
-          font-family: 'Noto Sans KR', sans-serif;
-          background-color: #000;
-          color: #fff;
-        }
-      
-        .hero {
-          width: 100%;
-          height: 100vh;
-          background: url('main-bg.png') no-repeat center center/cover;
-          display: flex;
-          flex-direction: column;
-          justify-content: flex-end;
-          padding: 0 5%;
-          position: relative;
-        }
-      
-        /* 중앙 상단 PLAY | NEWS */
-        .top-center {
-          position: absolute;
-          top: 20px;
-          left: 50%;
-          transform: translateX(-50%);
-          display: flex;
-          gap: 10px;
-          font-size: 14px;
-          font-weight: bold;
-        }
-      
-        .nav-item {
-          cursor: pointer;
-          padding-bottom: 5px;
-          border-bottom: 2px solid transparent;
-          transition: border-color 0.3s ease;
-        }
-      
-        .nav-item.active {
-          border-color: white;
-        }
-      
-        .separator {
-          color: white;
-        }
-      
-        /* 오른쪽 상단 🔍 */
-        .search-icon {
-          position: absolute;
-          top: 20px;
-          right: 20px;
-          font-size: 16px;
-          cursor: pointer;
-        }
-      
-        .main-text {
-          font-size: 24px;
-          font-weight: bold;
-          margin-bottom: 40px;
-          text-align: center;
-        }
-      
-        .play-highlights {
-          display: flex;
-          gap: 16px;
-          margin-bottom: 40px;
-          overflow-x: auto;
-        }
-      
-        .highlight-card {
-          min-width: 200px;
-          height: 250px;
-          background-color: #111;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-weight: bold;
-          font-size: 20px;
-          border: 1px solid #444;
-        }
-      
-        .categories {
-          background-color: black;
-          padding: 40px 5%;
-          text-align: center;
-        }
-      
-        .categories h2 {
-          font-size: 32px;
-          margin-bottom: 20px;
-        }
-      
-        .category-list {
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: center;
-          gap: 24px;
-          font-size: 24px;
-          font-weight: bold;
-        }
-      
-        .footer {
-          background-color: #000;
-          color: #fff;
-          text-align: center;
-          padding: 40px 0;
-        }
-      
-        .footer-logo {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          font-size: 32px;
-          font-weight: bold;
-          gap: 10px;
-        }
-      
-        .footer-logo img {
-          height: 40px;
-        }
-      
-        .footer-links {
-          margin-top: 16px;
-          font-size: 14px;
-          color: #aaa;
-        }
-      
-        .arrow-up {
-          font-size: 24px;
-          margin-top: 30px;
-          opacity: 0.5;
-        }
-      </style>
-      
+
+
+
 </head>
 
 <body>
 
-    <div class="hero">
-      <!-- 중앙 상단 메뉴 -->
-      <div class="top-center">
-        <span class="nav-item active">PLAY</span>
-        <span class="separator">|</span>
-        <span class="nav-item">NEWS</span>
+  <header>
+    <div class="header-top">
+      <div class="header-logo">
+        <p>nc</p>
       </div>
-      <!-- 오른쪽 상단 아이콘 -->
-      <div class="search-icon">🔍</div>
-  
-      <!-- 중앙 문구 -->
-      <div class="main-text">
+      <div class="header-click">
+        <span>play</span>
+        <span>News</span>
+      </div>
+      <div class="menu">
+
+      </div>
+
+      <div class="header-text">
         고퀄리티를 실현하다, CACCIA
       </div>
-  
-      <!-- 하이라이트 카드 -->
+    </div>
+
+  </header>
+
+  <>
+    <!-- PLAY HIGHLIGHTS 영역 -->
+    <div class="main-first">
+      <div class="highlight-title">PLAY HIGHLIGHTS</div>
+
       <div class="play-highlights">
         <div class="highlight-card">EDGE</div>
         <div class="highlight-card">DIVERSITY</div>
@@ -173,9 +46,11 @@
         <div class="highlight-card">NC PLAY</div>
       </div>
     </div>
-  
-    <!-- 카테고리 섹션 -->
-    <div class="categories">
+
+    <!-- 카테고리 영역 -->
+    <div class="main-second">
+      <div class="category-title">CATEGORIES</div>
+
       <div class="category-list">
         <div>ALL</div>
         <div>EDGE</div>
@@ -183,36 +58,15 @@
         <div>CREATIVE</div>
         <div>FILM</div>
       </div>
+
+      <div class="">
+
+      </div>
     </div>
-  
-    <!-- 푸터 -->
-    <div class="footer">
-      <div class="footer-logo">
-        NC
-        <img src="main-bg.png" alt="로고 이미지">
-        PLAY
-      </div>
-      <div class="footer-links">
-        GLOBAL + | FAMILY SITE +
-      </div>
-      <div class="footer-links">
-        ⓒ NCSOFT Corporation. All Rights Reserved.
-      </div>
-      <div class="arrow-up">↑</div>
-    </div>
-  
-    <!-- 탭 밑줄 활성화 스크립트 -->
-    <script>
-      const navItems = document.querySelectorAll('.nav-item');
-  
-      navItems.forEach(item => {
-        item.addEventListener('click', () => {
-          navItems.forEach(el => el.classList.remove('active'));
-          item.classList.add('active');
-        });
-      });
-    </script>
-  
-  </body>
+    
+
+  </main>
+
+</body>
   
 </html>
