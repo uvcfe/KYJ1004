@@ -1,119 +1,137 @@
-/* 1. 초기화 전 기본 스타일 */
-.before-reset {
-  margin-bottom: 40px;
-  padding: 20px;
-  border: 1px solid #ddd;
-}
-
-/* 2. 초기화 후 스타일 */
-.after-reset {
-  margin-bottom: 40px;
-  padding: 20px;
-  border: 1px solid #ddd;
-}
-
-/* 유저 에이전트 초기화 */
-.after-reset *,
-.after-reset *::before,
-.after-reset *::after {
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-.after-reset ul {
-  list-style: none;
+html, body {
+  height: 100%;
+  font-family: 'Noto Sans KR', sans-serif;
+  background-color: #000;
+  color: #fff;
 }
 
-.after-reset button,
-.after-reset input,
-.after-reset select {
-  border: none;
-  background: none;
-  font: inherit;
-  color: inherit;
-  outline: none;
+.hero {
+  width: 100%;
+  height: 100vh;
+  background: url('main-bg.png') no-repeat center center/cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0 5%;
+  position: relative;
 }
 
-.after-reset button {
+/* 중앙 상단 PLAY | NEWS */
+.top-center {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.nav-item {
   cursor: pointer;
+  padding-bottom: 5px;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.3s ease;
 }
 
-/* 3. 커스텀 스타일 */
-.custom-styles {
-  margin-bottom: 40px;
-  padding: 20px;
-  border: 1px solid #ddd;
+.nav-item.active {
+  border-color: white;
 }
 
-/* 유저 에이전트 초기화 */
-.custom-styles *,
-.custom-styles *::before,
-.custom-styles *::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* 커스텀 스타일 적용 */
-.custom-styles ul {
-  list-style: none;
-  margin: 20px 0;
-}
-
-.custom-styles li {
-  padding: 8px 0;
-  border-bottom: 1px solid #eee;
-}
-
-.custom-styles button {
-  background-color: #4CAF50;
+.separator {
   color: white;
-  padding: 10px 20px;
-  border-radius: 4px;
+}
+
+/* 오른쪽 상단 🔍 */
+.search-icon {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 16px;
   cursor: pointer;
-  transition: background-color 0.3s;
 }
 
-.custom-styles button:hover {
-  background-color: #45a049;
-}
-
-.custom-styles input {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  margin: 10px 0;
-}
-
-.custom-styles select {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  margin: 10px 0;
-  background-color: white;
-}
-
-/* 공통 스타일 */
-body {
-  font-family: 'Malgun Gothic', sans-serif;
-  line-height: 1.6;
-  color: #333;
-  padding: 20px;
-}
-
-h1 {
-  margin-bottom: 30px;
+.main-text {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 40px;
   text-align: center;
 }
 
-h2 {
-  margin-bottom: 20px;
-  color: #2c3e50;
+.play-highlights {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 40px;
+  overflow-x: auto;
 }
 
-p {
+.highlight-card {
+  min-width: 200px;
+  height: 250px;
+  background-color: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 20px;
+  border: 1px solid #444;
+}
+
+.categories {
+  background-color: black;
+  padding: 40px 5%;
+  text-align: center;
+}
+
+.categories h2 {
+  font-size: 32px;
   margin-bottom: 20px;
+}
+
+.category-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.footer {
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  padding: 40px 0;
+}
+
+.footer-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;
+  font-weight: bold;
+  gap: 10px;
+}
+
+.footer-logo img {
+  height: 40px;
+}
+
+.footer-links {
+  margin-top: 16px;
+  font-size: 14px;
+  color: #aaa;
+}
+
+.arrow-up {
+  font-size: 24px;
+  margin-top: 30px;
+  opacity: 0.5;
 }
